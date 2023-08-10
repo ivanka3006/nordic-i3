@@ -1,0 +1,3 @@
+#!/bin/bash
+maim -u --format png /dev/stdout | xclip -selection clipboard -t image/png -i
+notify-send "Copied!" "Screenshot copied to clipboard!"

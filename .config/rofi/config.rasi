@@ -1,0 +1,126 @@
+/*------------------КОНФИГУРАЦИЯ-------------------------*/
+configuration {
+    show-icons:                 true;
+    drun-display-format:        "{name}";
+}
+
+
+/*------------------ЦВЕТА И ШРИФТ-------------------------*/
+@import "~/.config/rofi/colors.rasi"
+* {
+    font: "JetBrainsMono 12";
+	active-background: @background;
+    active-foreground: @foreground;
+    normal-background: @background;
+    normal-foreground: @foreground;
+    urgent-background: @background;
+    urgent-foreground: @foreground;
+
+    alternate-active-background: @background;
+    alternate-active-foreground: @foreground;
+    alternate-normal-background: @background;
+    alternate-normal-foreground: @foreground;
+    alternate-urgent-background: @background;
+    alternate-urgent-foreground: @foreground;
+
+    selected-active-background: @background;
+    selected-active-foreground: @foreground;
+    selected-normal-background: @background;
+    selected-normal-foreground: @foreground;
+    selected-urgent-background: @background;
+    selected-urgent-foreground: @foreground;
+
+    background-color: @background;
+    border-color: @background;
+}
+
+
+/*------------------ОКНО-------------------------*/
+window {
+    width: 500px;
+
+    border: 2px solid;
+    border-color: @foreground;
+    border-radius: 20px;
+
+    background-color: @background;
+    padding: 0px;
+}
+
+
+/*------------------ГЛАВНЫЙ КОНТЕЙНЕР-------------------------*/
+mainbox {
+    spacing: 10px;
+    padding: 20px;
+    children: [ "inputbar", "listview" ];
+}
+
+
+/*------------------ИНПУТБАР-------------------------*/
+
+/*-КОНТЕЙНЕР ИНПУТБАРА-*/
+inputbar {
+    spacing: 10px;
+    padding: 15px;
+    border-radius: 20px;
+    background-color: @foreground;
+    text-color: @background;
+    children: [ "textbox-prompt-colon", "entry" ];
+}
+
+/*-ИКОНКА-*/
+textbox-prompt-colon {
+    expand: false;
+    str: "";
+    background-color: inherit;
+    text-color: inherit;
+}
+
+/*-ПРОМТ-*/
+entry {
+    background-color: inherit;
+    text-color: inherit;
+    placeholder: "Поиск";
+    placeholder-color: inherit;
+}
+
+/*------------------СПИСОК ЭЛЕМЕТОВ-------------------------*/
+listview {
+    columns: 1;
+    lines: 6;
+    scrollbar: true;
+    spacing: 10px;
+    text-color: @foreground;
+    background-color: @background;
+}
+
+
+/*------------------ЭЛЕМЕНТЫ-------------------------*/
+element {
+    spacing: 15px;
+    padding: 8px;
+    border-radius: 10px;
+    background-color: @background;
+    text-color: @foreground;
+}
+
+element.normal.normal {
+    background-color: @background;
+    text-color: @foreground;
+}
+
+element.selected.normal {
+    background-color: @foreground;
+    text-color: @background;
+}
+
+element-icon {
+    background-color: transparent;
+    text-color: inherit;
+    size: 32px;
+}
+element-text {
+    background-color: transparent;
+    text-color:  inherit;
+    vertical-align: 0.5;
+}
